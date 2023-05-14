@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+      <div class="topnav" id="myTopnav">
+            <img src="src/img/logo.jpg" class="chat-logo" alt="Logo">
+			<a href="index.html">Home</a>
+			<a href="login.html">Login</a>
+            <a href="passwordreset.html">Password Reset</a>
+            <a class="active" href="contactus.html">Contact Us</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+    </div>
+    <form id="contact-form" >
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter Name" name="name" required>
+        <label for="email" >Email:</label>
+        <input type="email"  id="email" placeholder="Enter email" name="email" required>
+        <label for="message" >Message:</label>
+        <textarea type="textarea"  id="message" placeholder="Enter Message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Firebase products -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+   
+    <script src="src/contactus.js"></script>
+    <script>
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+        }
+    </script>
+</body>
+
+</html>

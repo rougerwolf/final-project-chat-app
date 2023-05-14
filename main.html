@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/chat.css">
+    <link rel="stylesheet" href="src/main.css">
+    <title>Real Time Chat App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-container">
+            <div class="navbar">
+                <img id="user-avatar" />
+                <div class="logo">
+                    <p><span id="user-name"></span></p> 
+                </div>
+            </div>
+            <div id="all-users">
+                <!-- add more user elements as needed -->
+            </div>
+        </div>
+        <div class="right-container">
+            <div id="chat-header">
+                <h2>Chat Room</h2>
+                <button id="logout-btn">Logout</button>
+                <div id="delete-button-container"></div>
+            </div>
+            <div id="chat-container" style="height: 68vh;  overflow-y: scroll;">
+                <div id="chat-body">
+                    <div id="messages-list">
+                    </div>
+                </div>
+            </div>
+            <div class="message-input-container" id="chat-footer">
+                <form id="message-form">
+                    <input type="text" id="message-input" placeholder="Type your message here" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Firebase products -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    
+    <!--user derived scripts for firebase-->
+    <script src="login.js"></script>
+    <script src="src/chat.js"></script>
+    <script>
+        // Get a reference to the Firebase Authentication service
+        var auth = firebase.auth();
+        // Listen for changes in the user's authentication state
+        auth.onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in, retrieve their data from the "users" collection
+            var userDocRef = db.collection("users").doc(user.uid);
+            userDocRef.get().then(function(doc) {
+            if (doc.exists) {
+                // User data found, update the UI accordingly
+                var userData = doc.data();
+                document.getElementById("user-name").textContent = userData.name;
+                document.getElementById("user-avatar").src = userData.avatarUrl;
+            } else {
+                console.log("No such document!");
+            }
+            }).catch(function(error) {
+            console.log("Error getting document:", error);
+            });
+        } else {
+            // User is signed out, redirect to the login page
+            window.location = "index.html";
+        }
+        });
+    </script>
+</body>
+</html>

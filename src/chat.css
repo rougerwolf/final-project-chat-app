@@ -1,0 +1,106 @@
+  /* Style the main container */
+  body {
+      margin: 0;
+      padding: 0;
+  }
+
+  .container {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+  }
+.online-status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    border-radius: 50%; 
+}
+
+.online-status.online {
+    background-color: rgb(8, 245, 8);
+}
+
+.online-status.offline {
+    background-color: red;
+}
+  #chat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+  #chat-header h2 {
+      margin: 0;
+      font-size: 32px;
+      color: #333;
+      text-shadow: 1px 1px #ccc;
+  }
+
+  #messages-list {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-left: 5px;
+      width: 95%;
+  }
+
+  .sent-message {
+      background-color: #47cc4b;
+      font-size: 20px;
+      color: #fff;
+      border-radius: 20px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      align-self: flex-end;
+  }
+  .sent-message span.timestamp {
+      display: block;
+      margin-top: 4px;
+  }
+  .sent-message:hover{
+    background-color: hsl(88, 74%, 54%);
+  }
+  .timestamp{
+    font-size: 10px;
+    color: #333;
+  }
+
+  .received-message {
+      background-color: rgb(252, 182, 182);
+      font-size: 20px;
+      color: #333;
+      border-radius: 20px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      align-self: flex-start;
+      text-align: left;
+  } 
+  .received-message span.timestamp {
+      display: block;
+      margin-top: 4px;
+  }
+ .received-message:hover{
+    background-color: #ebc9f0;
+ }
+
+ .user{
+    margin-top: px;
+    border-bottom: 1px solid rgb(250, 250, 250);
+ }
+  @media screen and (max-width: 768px) {
+      body {
+          margin: 0;
+          padding: 0;
+      }
+
+      .received-message {
+          font-size: 10px;
+      }
+
+      .sent-message {
+          font-size: 10px;
+      }
+  }

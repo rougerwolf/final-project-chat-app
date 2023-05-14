@@ -1,0 +1,177 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    /* Added to make both containers stretch to equal height */
+    height: 90vh;
+    padding: 20px;
+}
+.left-container {
+    flex: 0 0 30%;
+    background-color: #333;
+    color: white;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+.right-container {
+    flex: 0 0 70%;
+    background-color: #ccf8eb;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.message-input-container input[type=text] {
+    flex: 1;
+    margin: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.message-input-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #333;
+}
+#user-avatar{
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    border-radius: 50%;
+    margin-bottom: 2px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    cursor: pointer;
+}
+.user:hover{
+    background-color: #5e645d;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#about-me-btn {
+    background-color: #7be262;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+}
+#about-me-btn:hover{
+    background-color: #f5f247;
+}
+.about-me-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow-y: auto;
+}
+.about-me-box h3 {
+    margin-top: 0;
+}
+.about-me-box p {
+    margin-bottom: 0;
+}
+
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+#close-btn:hover {
+    background-color: red;
+    color: #333;
+}
+
+
+#logout-btn{
+    background-color: #3f6ff1;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+#logout-btn:hover{
+    background-color: #f80c0c;
+}
+.menu-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+.dropdown-menu {
+    display: none;
+    right: 0;
+}
+.menu-button:hover+.dropdown-menu,
+.dropdown-menu:hover {
+    display: inline;
+}
+.delete-button{
+    background-color: transparent;
+    border: transparent;
+    color: #f80c0c;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+.delete-button:hover{
+    background-color: #333;
+    color: #fff;
+}
+@media screen and (max-width: 768px) {
+    body {
+            margin: 0;
+            padding: 0;
+            
+        }
+    .delete-button{
+        margin-left: 5px;
+        padding: 5px;
+    }
+    #logout-btn{
+        margin: 5px;
+    }
+}

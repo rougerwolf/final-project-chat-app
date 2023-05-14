@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <title>Register page</title>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+      <img src="src/img/logo.jpg" class="chat-logo" alt="Logo">
+			<a class="active" href="index.html">Home</a>
+			<a href="login.html">Login</a>
+      <a href="passwordreset.html">Password Reset</a>
+      <a href="contactus.html">Contact Us</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+    </div>     
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>The Real Time Chat Application</h2>
+      <h5>Project For Final Sem, May 15, 2023</h5>
+      <img src="src/img/image1.png" alt="real time chat app" class="insideImg"> 
+      <p>This is a project build for the final sem viva of MCA AIML 2021-2023 batch. This Project demonstrate the use of firebase and its capabilities, as in this whole project the main thing that is used is firebase and its features.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+        <h3 style="text-align: center; text-decoration:underline;">Registration Form</h3>
+        <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email"  class="form-label">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+        
+                <label for="avatar">Avatar:</label>
+                <input type="file" id="avatar" name="avatar">
+        
+            <button type="submit" >Register</button>
+            <br><br>           
+        </form>
+    </div>  
+    <div class="card">
+      <h2>Click here to login:</h2>
+      <button class="login-btn"><a href="login.html" style="font-size: 20px;">Login</a></button>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <img src="src/img/logo.jpg" class="footer-logo" alt="Logo">
+  
+  <div class="footer-content">
+    <p class="footer-text">
+      <i class='fas fa-phone'></i>&emsp;+91 7302199491
+    </p>
+    <p class="footer-email">
+      <i class='fas fa-envelope-open'></i>&emsp;uic.21mci1095@gmail.com
+    </p>
+    <p class="footer-link">
+      <i class='fas fa-chalkboard'></i>&emsp;#www.realtimechat-app-.com
+    </p>
+    <p class="footer-banner">
+      Let's Connect !
+    </p>
+  </div>
+</div>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script> 
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script> 
+    <!--user derived scripts for firebase-->
+    <script src="register.js"></script>
+    <script>
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+        }
+    </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>
